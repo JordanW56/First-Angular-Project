@@ -5,8 +5,8 @@
     </mat-form-field>
   </div>
   <div class="cards row">
-    <div *ngFor="let photo of photos  | paginate: { itemsPerPage: 24, currentPage: page }" class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-      <a data-fancybox="gallery" href={{photo.url}}>
+    <div *ngFor="let photo of photos  | paginate: { itemsPerPage: 24, currentPage: page, totalItems: totalImageCount }; index as i" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 flickrImages">
+      <a data-fancybox="gallery" [attr.data-caption]="photo.title"  href={{photo.url}}>
         <div class="center-cropped" [ngStyle]="{'background-image': 'url(' + photo.url + ')'}">
           <img src={{photo.url}}>
         </div>
@@ -15,7 +15,7 @@
       
     </div>
   </div>
-  <div class="paginationContainer">
+  <div *ngIf="pagination == true" class="paginationContainer">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>

@@ -14,6 +14,7 @@ export class FlickrComponent implements OnInit {
   searchBox = new FormControl();
   searchModel$: Observable<string>;
   photos: Object;
+  pagination: Boolean;
   
 
   constructor(private formBuilder: FormBuilder, private flickrService: FlickrAppService) { }
@@ -25,6 +26,13 @@ export class FlickrComponent implements OnInit {
     switchMap((query: string) => this.flickrService.getResult(query)))
     .subscribe(value => {
       this.photos = value;
+      if (this.photos == "") {
+      this.pagination = false;
+      }
+      else {
+        this.pagination = true;
+      }
+
     });
   }
 
