@@ -11,7 +11,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Third Party Libaries 
 
-This project uses the Lightbox libary to easily display items in a light weight gallery which allows both mouse / touch /keypresses to navigate with additonal options provided e.g. thumbnails / slideshow.
+This project uses the Fancybox library to easily display items in a light weight gallery which allows both mouse / touch /keypresses to navigate with additonal options provided e.g. thumbnails / slideshow.
 
 ## Build
 
