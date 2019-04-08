@@ -9,7 +9,7 @@ Run `npm install` to install node modules
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Third Party Libaries 
+## Third Party Libraries 
 
 This project uses the Fancybox library to easily display items in a light weight gallery which allows both mouse / touch /keypresses to navigate with additonal options provided e.g. thumbnails / slideshow.
 
