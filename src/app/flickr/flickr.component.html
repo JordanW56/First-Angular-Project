@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="search">
+    <mat-form-field>
+      <input matInput placeholder="Flickr Image Search" type="search" [formControl]="searchBox">
+    </mat-form-field>
+  </div>
+  <div class="cards row">
+    <div *ngFor="let photo of photos  | paginate: { itemsPerPage: 24, currentPage: page }" class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+      <a data-fancybox="gallery" href={{photo.url}}>
+        <div class="center-cropped" [ngStyle]="{'background-image': 'url(' + photo.url + ')'}">
+          <img src={{photo.url}}>
+        </div>
+      </a>
+      <div class="cards__text">{{photo.title | slice:0:40 }}...</div>
+      
+    </div>
+  </div>
+  <div class="paginationContainer">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
